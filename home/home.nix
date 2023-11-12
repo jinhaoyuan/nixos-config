@@ -8,7 +8,7 @@
       ./alacritty
       # ./kitty
       # ./rofi
-      # ./waybar
+      ./waybar
     ];
   home = {
     username = "jinhaoyuan";
@@ -26,6 +26,7 @@
     eww-wayland
     hyprpaper
     waybar
+    mako
     # music
     yesplaymusic
     
