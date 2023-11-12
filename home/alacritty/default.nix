@@ -2,6 +2,7 @@
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
   home.file.".config/alacritty/alacritty.yml".source = ./alacritty.yml;
+  home.file.".config/alacritty/tokyonight_storm.yml".source = ./tokyonight_storm.yml;
 
   # 递归将某个文件夹中的文件，链接到 Home 目录下的指定位置
   # home.file.".config/i3/scripts" = {
