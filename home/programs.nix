@@ -18,6 +18,10 @@
     # kitty = {
     #   enable = true;
     # };
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+    };
     zsh = {
       enable = true;
       enableAutosuggestions = true;
@@ -28,7 +32,7 @@
       };
       oh-my-zsh = {
 	enable = true;
-	theme = "half-life";
+	# theme = "half-life";
 	plugins = 
 	  [
 	    "git"

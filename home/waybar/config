@@ -10,7 +10,7 @@
     // "modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "battery#bat2", "clock", "tray"],
     // Modules configuration
     "hyprland/workspaces": {
-	"format": "{name}: {icon}",
+	"format": "{icon}",
 	"format-icons": {
 		"1": "1",
 		"2": "2",

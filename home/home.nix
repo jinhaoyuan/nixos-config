@@ -9,6 +9,7 @@
       # ./kitty
       # ./rofi
       ./waybar
+      ./starship
     ];
   home = {
     username = "jinhaoyuan";
@@ -40,6 +41,7 @@
     zsh-autosuggestions
     zsh-syntax-highlighting
     autojump
+    starship
     
 
     # archives
