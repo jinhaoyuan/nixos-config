@@ -27,9 +27,13 @@
     eww-wayland
     hyprpaper
     waybar
-    mako
+    dunst
+    tmux
+    zellij
+    
     # music
     yesplaymusic
+    netease-cloud-music-gtk
     
     # communication
     telegram-desktop
