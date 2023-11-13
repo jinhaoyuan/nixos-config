@@ -7,6 +7,7 @@
   fonts = {
     fontDir.enable = true;
     fonts = with pkgs; [
+      nerdfonts
       noto-fonts
       # noto-fonts-cjk-sans
       # noto-fonts-cjk-serif
