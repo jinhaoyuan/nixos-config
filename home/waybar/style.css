@@ -4,35 +4,23 @@
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
+#window {
+   background-color: @background;
+   border-bottom: 10px solid rgba(21, 81, 154, 1.0);
+   border-top: 10px solid rgba(21, 81, 154, 1.0);
+   border-left: 7px solid rgba(21, 81, 154, 1.0);
+   border-right: 7px solid rgba(21, 81, 154, 1.0);
+   border-radius: 20px;
+   padding-left: 10px;
+   padding-right: 10px;
+}
 
 window#waybar {
-    background-color: @background;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
-window#waybar.hidden {
-}
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
 
 button {
     /* Use box-shadow instead of border so the text isn't offset */
@@ -47,6 +35,16 @@ button:hover {
     background: inherit;
     box-shadow: inset 0 -3px #ffffff;
 }
+#custom-launcher {
+    font-size: 24px;
+    margin-top: 6px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 5px;
+    transition: none;
+    color: @foreground;
+    background: @background;
+								}
 
 #workspaces button {
     padding: 0 5px;
@@ -92,8 +90,8 @@ button:hover {
     color: #ffffff;
 }
 
-#window,
 #workspaces {
+    background-color: @normal_blue;
     margin: 0 4px;
 }
 
