@@ -46,7 +46,9 @@
     zsh-syntax-highlighting
     autojump
     starship
-    
+   
+    #backlight
+    light 
 
     # archives
     zip

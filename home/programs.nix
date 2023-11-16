@@ -12,6 +12,16 @@
     waybar = {
       enable = true;
     };
+    vim = {
+      extraConfig = ''
+	set number
+	set autoindent
+	set cindent
+	set tabstop=4
+	set softtabstop=4
+	set shiftwidth=4
+      '';
+    };
     alacritty = {
       enable = true;
     };

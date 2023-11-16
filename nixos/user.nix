@@ -4,11 +4,18 @@
   imports =
     [ 
     ];
+  security.sudo.wheelNeedsPassword = false;
   users = {
+    mutableUsers = false;
     users = {
       jinhaoyuan = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+        extraGroups = [ 
+	  "wheel"
+          "networkmanager"
+          "video"
+          "audio"
+	]; 
         shell = pkgs.zsh;
 	ignoreShellProgramCheck = true;
         description = "jinhaoyuan home";
