@@ -6,7 +6,7 @@
     ];
   security.sudo.wheelNeedsPassword = false;
   users = {
-    mutableUsers = false;
+    # mutableUsers = false;
     users = {
       jinhaoyuan = {
         isNormalUser = true;

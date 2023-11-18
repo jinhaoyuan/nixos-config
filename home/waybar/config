@@ -1,17 +1,17 @@
 {
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
+    "height": 15, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "margin-top": 5,
     "margin-left": 10,
     "margin-right": 10,
     // "margin-bottom": 10,
-    "spacing": 4, // Gaps between modules (4px)
+    // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/launcher", "hyprland/workspaces"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces","hyprland/window"],
     "modules-center": [],
-    "modules-right": ["backlight/slider",],
+    "modules-right": ["cpu","disk","memory","battery","backlight","network","pulseaudio","clock","tray"],
     // Modules configuration
     "custom/launcher":{
         "format": "󱄅 ",
@@ -32,10 +32,80 @@
              "*": 5, // 5 workspaces by default on every monitor
        }
     },
-    "backlight/slider": {
-        "min": 0,
-        "max": 100,
-        "orientation": "horizontal",
-        "device": "intel_backlight"
+    "hyprland/window": {
+        "format": " {}",
+        "rewrite": {
+            "(.*) — Mozilla Firefox": "🌎 $1",
+            "(.*) - fish": "> [$1]"
+        },
+        "separate-outputs": true
     },
+    "battery": {
+        "bat": "BAT0",
+        "interval": 60,
+        "states": {
+	    "good": 90,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-icons": ["󱉞", "󱊡", "󱊢", "󱊣", "󱈑"],
+    },
+    "cpu": {
+       "interval": 10,
+       "format": "󰻠 {usage}%",
+       // "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+    },
+    "disk": {
+        "interval": 30,
+        "format": "󰨣 {percentage_used}%",
+        "path": "/"
+    },
+    "memory": {
+        "interval": 30,
+        "format": "󰍛 {percentage}%",
+    },
+    "backlight": {
+	"interval": 1,
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""],
+	"on-scroll-up": "light -A 5",
+	"on-scroll-down": "light -U 5",
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}% ",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": " ",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid}:{icon} ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+    "clock": {
+        "interval": 60,
+        "format": " {:%I:%M %p  󰃭 %d/%m/%Y}",
+    },
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    
 }

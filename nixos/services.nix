@@ -35,6 +35,7 @@
   };
 
   programs = {
+    light.enable = true;
     hyprland = {
       enable = true;
     
