@@ -1,4 +1,4 @@
 *.bak
-*.swap
-home/*/*.swap
-nixos/*/*.swap
+*.swp
+home/*/*.swp
+nixos/*/*.swp

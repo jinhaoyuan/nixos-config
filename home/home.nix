@@ -18,8 +18,9 @@
   };
   home.packages = with pkgs;[
     #cli
+    obs-studio
     alacritty
-    kitty
+    # kitty
     joshuto
     cliphist
     wl-clipboard
@@ -30,10 +31,20 @@
     dunst
     tmux
     zellij
+    udiskie
+    rustdesk 
+    emacs29 
+    wlogout 
+    swaybg 
+    slurp 
+    grim
+    swaylock-effects
+    mpv
+    imv
     
     # music
     yesplaymusic
-    netease-cloud-music-gtk
+    # netease-cloud-music-gtk
     
     # communication
     telegram-desktop

@@ -1,7 +1,7 @@
 @import "./color.less";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Fira Code Nerd Font";
     font-size: 13px;
 }
 #window {
@@ -34,7 +34,7 @@ button:hover {
 }
 #custom-launcher {
     padding-left: 10px;
-    font-size: 18px;
+    font-size: 20px;
     color: @foreground;
 }
 
@@ -78,7 +78,6 @@ button:hover {
     border-bottom: 1px solid @border_color;
     font-size: 12px;
 }
-#backlight,
 #cpu {
     margin-left: 5px;
     border-top-left-radius: 8px;
@@ -88,6 +87,11 @@ button:hover {
 }
 #pulseaudio,
 #battery {
+    border-right: 1px solid @border_color;
+}
+/*
+#pulseaudio,
+#battery {
     margin-right: 5px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -95,10 +99,14 @@ button:hover {
     border-right: 1px solid @border_color;
 }
 #clock, 
+*/
 #tray {
     border: 1px solid @border_color;
-    margin: 3 5px;
-    border-radius: 8px;
+    margin: 3 0px;
+    margin-right: 5px;
+    padding-right: 10px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
 }
 
 #pulseaudio,
@@ -108,9 +116,6 @@ button:hover {
 }
 #clock {
     color: @bright_yellow;
-}
-#tray {
-    background-color: @bright_black;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
