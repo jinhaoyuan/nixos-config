@@ -7,9 +7,9 @@
     enable = true;
     wlr.enable = false;
     extraPortals = with pkgs; [
-      # xdg-desktop-portal-wlr
+      xdg-desktop-portal-wlr
       # xdg-desktop-portal-hyprland
-      xdg-desktop-portal-gtk
+      # xdg-desktop-portal-gtk
     ];
   };
   # Enable the X11 windowing system.
@@ -46,4 +46,13 @@
       nvidiaPatches = true;
     };
   }; 
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+    };
+    docker = {
+      enable = true;
+      storageDriver = "btrfs";
+    };
+  };
 }

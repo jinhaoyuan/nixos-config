@@ -18,13 +18,11 @@
   };
   home.packages = with pkgs;[
     #cli
-    obs-studio
     alacritty
     # kitty
     joshuto
     cliphist
     wl-clipboard
-    rofi-wayland
     eww-wayland
     hyprpaper
     waybar
@@ -32,7 +30,6 @@
     tmux
     zellij
     udiskie
-    rustdesk 
     emacs29 
     wlogout 
     swaybg 
@@ -41,6 +38,14 @@
     swaylock-effects
     mpv
     imv
+    toastify
+
+    # application
+    obs-studio
+    rustdesk 
+    # vmware-workstation
+    vscode
+    
     
     # music
     yesplaymusic
@@ -86,5 +91,6 @@
     strace # system call monitoring
     ltrace # library call monitoring
     lsof # list open files
+    lshw
   ];
 }

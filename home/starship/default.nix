@@ -1,22 +1,25 @@
-{ config, pkgs, ... }:
+{ config, pkgs, catppuccin-starship, ... }:
 {
   # 直接将当前文件夹的配置文件，链接到 Home 目录下的指定位置
-  home.file.".config/starship.toml".source = ./starship.toml;
+  # home.file.".config/starship.toml".source = ./starship.toml;
 
-  # 递归将某个文件夹中的文件，链接到 Home 目录下的指定位置
-  # home.file.".config/hypr/wallpapers" = {
-  #   source = ../wallpapers;
-  #   recursive = true;   # 递归整个文件夹
-  # };
-  # home.file.".config/i3/scripts" = {
-  #   source = ./scripts;
-  #   recursive = true;   # 递归整个文件夹
-  #   executable = true;  # 将其中所有文件添加「执行」权限
-  # };
-
-  # 直接以 text 的方式，在 nix 配置文件中硬编码文件内容
-  # home.file.".xxx".text = ''
-  #     xxx
-  # '';
- 
+  programs = {
+    starship = {
+      enable = true;
+      enableZshIntegration = true;
+      settings = {
+        add_newline = true;
+        # Other config here
+        format = ''
+          $os$directory$git_branch$git_status$nodejs$rust$golang$php$lua$python$rust$docker_context$package
+          $character'';
+        right_format = "$time";
+        continuation_prompt = "[ ▶▶ ](bold purple)";
+        character = {
+          success_symbol = "[ ➜](bold purple)";
+        };
+        palette = "catppuccin_macchiato";
+      } // builtins.fromTOML (builtins.readFile "${catppuccin-starship}/palettes/macchiato.toml");
+    };
+  };
 }

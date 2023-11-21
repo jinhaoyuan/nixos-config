@@ -11,13 +11,16 @@
       jinhaoyuan = {
         isNormalUser = true;
         extraGroups = [ 
-	  "wheel"
+	        "wheel"
           "networkmanager"
           "video"
           "audio"
+          "docker"
+          "libvirt"
+          "libvirt-kvm"
 	]; 
         shell = pkgs.zsh;
-	ignoreShellProgramCheck = true;
+	      ignoreShellProgramCheck = true;
         description = "jinhaoyuan home";
         home = "/home/jinhaoyuan";
       };

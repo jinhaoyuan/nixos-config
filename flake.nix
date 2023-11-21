@@ -29,6 +29,51 @@
     hyprland.url = "github:hyprwm/Hyprland";
     # community wayland nixpkgs
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+
+    # color scheme - catppuccin
+    catppuccin-btop = {
+      url = "github:catppuccin/btop";
+      flake = false;
+    };
+    catppuccin-fcitx5 = {
+      url = "github:catppuccin/fcitx5";
+      flake = false;
+    };
+    catppuccin-alacritty = {
+      url = "github:catppuccin/alacritty";
+      flake = false;
+    };
+    catppuccin-starship = {
+      url = "github:catppuccin/starship";
+      flake = false;
+    };
+    catppuccin-hyprland = {
+      url = "github:catppuccin/hyprland";
+      flake = false;
+    };
+    catppuccin-emacs = {
+      url = "github:catppuccin/emacs";
+      flake = false;
+    };
+    catppuccin-vim = {
+      url = "github:catppuccin/vim";
+      flake = false;
+    };
+    catppuccin-grub = {
+      url = "github:catppuccin/grub";
+      flake = false;
+    };
+    catppuccin-mako = {
+      url = "github:catppuccin/mako";
+      flake = false;
+    };
+    catppuccin-waybar = {
+      url = "github:catppuccin/waybar";
+      flake = false;
+    };
+    
+    
+  
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
