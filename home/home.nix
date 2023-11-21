@@ -7,7 +7,8 @@
       ./hyprland
       ./alacritty
       # ./kitty
-      # ./rofi
+      ./other/btop.nix
+      # ./other/rofi.nix
       ./waybar
       ./starship
     ];
@@ -39,6 +40,7 @@
     mpv
     imv
     toastify
+    rofi-wayland
 
     # application
     obs-studio

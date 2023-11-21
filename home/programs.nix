@@ -9,9 +9,9 @@
       userName = "jinhaoyuan";
       userEmail = "jinhaoyuan02@gmail.com";
     };
-    waybar = {
-      enable = true;
-    };
+    # waybar = {
+    #   enable = true;
+    # };
     vim = {
       extraConfig = ''
 	set number
@@ -22,9 +22,9 @@
 	set shiftwidth=4
       '';
     };
-    alacritty = {
-      enable = true;
-    };
+    # alacritty = {
+    #   enable = true;
+    # };
     # kitty = {
     #   enable = true;
     # };

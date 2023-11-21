@@ -6,14 +6,14 @@
 }
 #window {
     transition: none;
-    color: @Peach;
+    color: @peach;
     background-color: transparent;
 }
 
 window#waybar {
     border-radius: 8px;
-    border: 1px solid @Overlay2;
-    background-color: @Surface0;
+    border: 1px solid @overlay2;
+    background-color: @base;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -35,30 +35,30 @@ button:hover {
 #custom-launcher {
     padding-left: 10px;
     font-size: 20px;
-    color: @Pink;
+    color: @pink;
 }
 
 #workspaces {
     padding: 0 5px;
     border-radius: 8px;
-    border: 1px solid @Overlay2;
-    background-color: @Surface2;
+    border: 1px solid @overlay2;
+    background-color: @surface0;
     margin: 3 8px;
 }
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: @Mauve;
+    color: @mauve;
 }
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 -3px #ffffff;
 }
 #workspaces button.empty {
-    color: @normal_green;
+    color: @rosewater;
 }
 #workspaces button.active {
-    color: @bright_magenta;
+    color: @pink;
 }
 #clock,
 #tray,
@@ -72,10 +72,10 @@ button:hover {
     margin-top: 3px;
     margin-bottom: 3px;
     padding: 0 5px;
-    background-color: @Surface2;
-    color: @Lavender;
-    border-top: 1px solid @Overlay2;
-    border-bottom: 1px solid @Overlay2;
+    background-color: @surface0;
+    color: @lavender;
+    border-top: 1px solid @overlay2;
+    border-bottom: 1px solid @overlay2;
     font-size: 12px;
 }
 #cpu {
@@ -83,11 +83,11 @@ button:hover {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
     padding-left: 10px;
-    border-left: 1px solid @Overlay2;
+    border-left: 1px solid @overlay2;
 }
 #pulseaudio,
 #battery {
-    border-right: 1px solid @Overlay2;
+    border-right: 1px solid @overlay2;
 }
 /*
 #pulseaudio,
@@ -101,7 +101,7 @@ button:hover {
 #clock, 
 */
 #tray {
-    border: 1px solid @Overlay2;
+    border: 1px solid @overlay2;
     margin: 3 0px;
     margin-right: 5px;
     padding-right: 10px;
@@ -112,10 +112,10 @@ button:hover {
 #pulseaudio,
 #backlight,
 #network {
-    color: @Blue;
+    color: @blue;
 }
 #clock {
-    color: @Sapphire;
+    color: @sapphire;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
