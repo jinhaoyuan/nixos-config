@@ -71,6 +71,10 @@
       url = "github:catppuccin/waybar";
       flake = false;
     };
+    catppuccin-rofi = {
+      url = "github:catppuccin/rofi";
+      flake = false;
+    };
     
     
   

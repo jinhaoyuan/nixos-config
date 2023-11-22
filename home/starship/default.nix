@@ -18,6 +18,19 @@
         character = {
           success_symbol = "[ ➜](bold purple)";
         };
+	directory = {
+	  read_only = " 󰌾";
+	  home_symbol = " 󰻺 ";
+	};
+	os = {
+	  format = "[$symbol]($style)";
+	  style = "bold blue";
+	  disabled = false;
+	};
+	time = {
+	  disabled = false;
+	  format = "[ 󱑂 $time ]($style)";
+	};
         palette = "catppuccin_macchiato";
       } // builtins.fromTOML (builtins.readFile "${catppuccin-starship}/palettes/macchiato.toml");
     };

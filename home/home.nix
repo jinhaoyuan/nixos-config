@@ -6,9 +6,8 @@
       ./programs.nix
       ./hyprland
       ./alacritty
-      # ./kitty
-      ./other/btop.nix
-      # ./other/rofi.nix
+      ./other
+      ./other
       ./waybar
       ./starship
     ];
@@ -20,7 +19,6 @@
   home.packages = with pkgs;[
     #cli
     alacritty
-    # kitty
     joshuto
     cliphist
     wl-clipboard
