@@ -5,11 +5,10 @@
     [
       ./programs.nix
       ./hyprland
-      ./alacritty
       ./other
       ./other
       ./waybar
-      ./starship
+      ./fcitx5
     ];
   home = {
     username = "jinhaoyuan";

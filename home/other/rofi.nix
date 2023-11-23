@@ -1,15 +1,16 @@
 { catppuccin-rofi,  ... }:
 {
   # home.file.".config/rofi/config.rasi".source = "${catppuccin-rofi}/themes/macchiato.css";
-  home.file.".local/share/rofi/themes/catppuccin-macchiato.rasi".source = "${catppuccin-rofi}/themes/catppuccin-macchiato.rasi";
+  # home.file.".local/share/rofi/themes/catppuccin-macchiato.rasi".source = "${catppuccin-rofi}/themes/catppuccin-macchiato.rasi";
  
-  programs = {
-    rofi = {
-      enable = true;
-    };
-  };
+  # programs = {
+  #   rofi = {
+  #     enable = true;
+  #   };
+  # };
   xdg = {
     configFile = {
+      "rofi/catppuccin-macchiato.rasi".source = "${catppuccin-rofi}/basic/.local/share/rofi/themes/catppuccin-macchiato.rasi";
       "rofi/config.rasi".text =
       ''
       configuration{
@@ -28,8 +29,8 @@
           sidebar-mode: true;
       }
       
-      @theme "catppuccin-mocha"
+      @theme "catppuccin-macchiato"
       '';
     };
-  }
+  };
 }

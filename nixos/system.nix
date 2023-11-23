@@ -8,7 +8,6 @@
       ./user.nix
       ./boot.nix
       ./fonts.nix
-      ./i18n.nix
       ./services.nix
     ];
   fileSystems."/" =
