@@ -5,7 +5,7 @@
     [
       ./btop.nix
       ./rofi.nix
-      ./alacritty
-      ./starship
+      ./alacritty.nix
+      ./starship.nix
     ];
 }

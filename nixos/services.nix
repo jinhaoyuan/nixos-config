@@ -45,6 +45,14 @@
     
       nvidiaPatches = true;
     };
+    ssh = {
+      extraConfig = ''
+        Host github.com
+          Hostname ssh.github.com
+          Port 443
+          User git
+      '';
+  };
   }; 
   virtualisation = {
     libvirtd = {
@@ -54,13 +62,5 @@
       enable = true;
       storageDriver = "btrfs";
     };
-  };
-  ssh = {
-    extraConfig = ''
-      Host github.com
-        Hostname ssh.github.com
-        Port 443
-        User git
-    '';
   };
 }

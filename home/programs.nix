@@ -9,9 +9,6 @@
       userName = "jinhaoyuan";
       userEmail = "jinhaoyuan02@gmail.com";
     };
-    # waybar = {
-    #   enable = true;
-    # };
     vim = {
       extraConfig = ''
 	set number
@@ -23,16 +20,6 @@
   set expandtab
       '';
     };
-    # alacritty = {
-    #   enable = true;
-    # };
-    # kitty = {
-    #   enable = true;
-    # };
-    # starship = {
-    #   enable = true;
-    #   enableZshIntegration = true;
-    # };
     zsh = {
       enable = true;
       enableAutosuggestions = true;
