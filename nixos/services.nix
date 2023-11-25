@@ -58,9 +58,17 @@
     libvirtd = {
       enable = true;
     };
-    docker = {
+    # docker = {
+    #   enable = true;
+    #   storageDriver = "btrfs";
+    # };
+    podman = {
       enable = true;
-      storageDriver = "btrfs";
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
     };
   };
 }

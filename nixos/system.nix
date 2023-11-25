@@ -117,6 +117,7 @@
 	    qemu
 	    virt-manager 
 	    iproute2
+      podman-compose
     ];
   };
   nix = {

@@ -4,7 +4,7 @@
   qt = {
     enable = true;
     platformTheme = "qtct";
-  }
+  };
   gtk = {
     enable = true;
     theme = {

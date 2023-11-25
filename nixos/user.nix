@@ -4,7 +4,10 @@
   imports =
     [ 
     ];
-  security.sudo.wheelNeedsPassword = false;
+  security = {
+    sudo.wheelNeedsPassword = false;
+    pam.services.swaylock = {};
+  };
   users = {
     # mutableUsers = false;
     users = {
@@ -22,6 +25,7 @@
           "video"
           "audio"
           "docker"
+          "podman"
           "libvirt"
 	      ];
         openssh.authorizedKeys.keys = [

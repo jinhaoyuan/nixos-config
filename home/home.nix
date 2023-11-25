@@ -38,10 +38,11 @@
     imv
     toastify
     rofi-wayland
+    podman-desktop
 
     # application
     obs-studio
-    rustdesk 
+    # rustdesk 
     # vmware-workstation
     vscode
     
@@ -85,6 +86,8 @@
     btop  # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
+    fzf
+    navi
 
     # system call monitoring
     strace # system call monitoring
