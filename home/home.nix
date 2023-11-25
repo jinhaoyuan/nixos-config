@@ -6,7 +6,6 @@
       ./programs.nix
       ./hyprland
       ./other
-      ./other
       ./waybar
       ./fcitx5
     ];
@@ -16,46 +15,48 @@
     stateVersion = "23.05";
   };
   home.packages = with pkgs;[
-    #cli
-    alacritty
-    joshuto
-    cliphist
-    wl-clipboard
+    # desktop
     eww-wayland
     hyprpaper
     waybar
-    dunst
-    tmux
-    zellij
-    udiskie
-    emacs29 
+    # dunst 
+    mako
     wlogout 
-    swaybg 
-    slurp 
-    grim
     swaylock-effects
+    # rofi-wayland
+    
+
+    # GUI
+    obs-studio
+    vscode
+    yesplaymusic
+    telegram-desktop
+    discord
+    podman-desktop
+    
+    
+    # tools
     mpv
     imv
     toastify
-    rofi-wayland
-    podman-desktop
+    cliphist
+    wl-clipboard
+    swaybg 
+    slurp 
+    grim
+    emacs29
+    udiskie
 
-    # application
-    obs-studio
-    # rustdesk 
-    # vmware-workstation
-    vscode
-    
-    
-    # music
-    yesplaymusic
-    # netease-cloud-music-gtk
-    
-    # communication
-    telegram-desktop
-    discord
+    # terminal
+    alacritty
+    tmux
+    zellij
 
-    #zsh
+    # terminal-tools
+    joshuto
+    bluez
+
+    # shell
     oh-my-zsh
     zsh-completions
     zsh-autosuggestions
@@ -63,7 +64,7 @@
     autojump
     starship
    
-    #backlight
+    # backlight
     light 
 
     # archives

@@ -45,11 +45,12 @@
       };
     };
     obs-studio = {
-      plugins = with pkgs.obs-studio-plugins; [
-        wlrobs
-        # obs-backgroundremoval
-        obs-pipewire-audio-capture
-      ];
+      enable = true;
+      # plugins = with pkgs.obs-studio-plugins; [
+      #   wlrobs
+      #   # obs-backgroundremoval
+      #   obs-pipewire-audio-capture
+      # ];
     };
   };
 
