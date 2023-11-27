@@ -29,6 +29,7 @@
       };
     };
     v2raya.enable = true;
+    blueman.enable = true;
     openssh = {
       enable = true;
     };

@@ -1,18 +1,23 @@
 { pkgs, catppuccin-rofi,  ... }:
 {
-
+  home.packages = with pkgs;[
+    rofi-bluetooth
+    rofi-vpn
+    rofi-power-menu
+  ];
   programs = {
     rofi = {
       enable = true;
-      package = pkgs.rofi.override {
-        package = pkgs.rofi-wayland;
-        plugins = with pkgs;[ 
-          rofi-emoji
-          rofi-top
-          rofi-calc
-          rofi-file-browser
-        ];
-      }; 
+      package = pkgs.rofi-wayland;
+      plugins = with pkgs;[ 
+        rofi-emoji
+        rofi-calc
+      ];
+      pass = {
+        enable = true;
+        package = pkgs.rofi-pass-wayland;
+      };
+      
     };
   };
   
@@ -22,7 +27,7 @@
       "rofi/config.rasi".text =
       ''
       configuration{
-          modi: "run,drun,window";
+          modes: [run,drun,window,ssh,calc,emoji];
           icon-theme: "Oranchelo";
           show-icons: true;
           terminal: "alacritty";
@@ -30,10 +35,13 @@
           location: 0;
           disable-history: false;
           hide-scrollbar: true;
-          display-drun: "   Apps ";
-          display-run: "   Run ";
-          display-window: " 󰖳  Window";
-          display-Network: " 󰤨  Network";
+          display-drun: "   ";
+          display-run: "   ";
+          display-window: " 󰖳  ";
+          display-Network: " 󰤨  ";
+          display-ssh: " 󰣀  ";
+          display-calc: " 󰪚  ";
+          display-emoji: " 󰞅  ";
           sidebar-mode: true;
       }
       

@@ -2,7 +2,7 @@
 {
   xdg = {
     configFile = {
-      "mako/config/macchiato".source = "${catppuccin-mako}/src/macchiato";
+      "mako/config".source = "${catppuccin-mako}/src/macchiato";
     };
   };
 }

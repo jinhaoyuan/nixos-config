@@ -10,8 +10,8 @@
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["custom/launcher", "hyprland/workspaces","hyprland/window"],
-    "modules-center": [],
-    "modules-right": ["cpu","disk","memory","battery","backlight","network","pulseaudio","clock","tray"],
+    "modules-center": ["mpd"],
+    "modules-right": ["network","bluetooth", "memory","battery","backlight","pulseaudio","clock","custom/power"],
     // Modules configuration
     "custom/launcher":{
         "format": "󱄅 ",
@@ -39,6 +39,53 @@
             "(.*) - fish": "> [$1]"
         },
         "separate-outputs": true
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "interval": 10,
+        "consume-icons": {
+            "on": " " // Icon shows only when "consume" is on
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ", // Icon grayed out when "random" is off
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "{icon} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "", //An empty format will hide the module.
+	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+        "tooltip-format-wifi": "{essid}:{icon} ",
+        "tooltip-format-ethernet": "{ifname} ",
+        "tooltip-format-disconnected": "Disconnected",
+    },
+    "bluetooth": {
+        "format": "󰂲",
+        "format-connected": "󰂱",
+        // "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        "on-click": "rofi-bluetooth"
     },
     "battery": {
         "bat": "BAT0",
@@ -87,24 +134,19 @@
         "scroll-step": 1,
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
-    "network": {
-        "format": "{ifname}",
-        "format-wifi": "{icon} ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
-        "format-disconnected": "", //An empty format will hide the module.
-	"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid}:{icon} ",
-        "tooltip-format-ethernet": "{ifname} ",
-        "tooltip-format-disconnected": "Disconnected",
-    },
     "clock": {
         "interval": 60,
-        "format": " {:%I:%M %p  󰃭 %d/%m/%Y}",
+        // "format": " {:%I:%M %p  󰃭 %d/%m/%Y}",
+        "format": "󱎫 {:%H:%M}",
+        "tooltip-format": "{:%Y-%m-%d}",
     },
     "tray": {
         "icon-size": 18,
         "spacing": 10
+    },
+    "custom/power":{
+        "format": "⏻ ",
+        "on-click": "wlogout"
     },
 
     

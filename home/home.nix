@@ -38,6 +38,7 @@
     # tools
     mpv
     imv
+    ncmpcpp
     toastify
     cliphist
     wl-clipboard
@@ -46,6 +47,7 @@
     grim
     emacs29
     udiskie
+    libqalculate
 
     # terminal
     alacritty
@@ -54,7 +56,6 @@
 
     # terminal-tools
     joshuto
-    bluez
 
     # shell
     oh-my-zsh

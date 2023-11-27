@@ -11,8 +11,8 @@
 }
 
 window#waybar {
-    border-radius: 8px;
-    border: 1px solid @overlay2;
+    border-radius: 15px;
+    border: 0px solid @overlay2;
     background-color: @base;
     transition-property: background-color;
     transition-duration: .5s;
@@ -42,23 +42,23 @@ button:hover {
     padding: 0 5px;
     border-radius: 8px;
     border: 1px solid @overlay2;
-    background-color: @surface0;
-    margin: 3 8px;
+    /* background-color: @surface0; */
+    margin: 0 8px;
 }
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: @mauve;
+    color: @rosewater;
 }
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
     box-shadow: inset 0 -3px #ffffff;
 }
 #workspaces button.empty {
-    color: @rosewater;
+    color: @green;
 }
 #workspaces button.active {
-    color: @pink;
+    color: @mauve;
 }
 #clock,
 #tray,
@@ -69,53 +69,53 @@ button:hover {
 #disk,
 #memory,
 #battery {
-    margin-top: 3px;
-    margin-bottom: 3px;
     padding: 0 5px;
-    background-color: @surface0;
-    color: @lavender;
-    border-top: 1px solid @overlay2;
-    border-bottom: 1px solid @overlay2;
     font-size: 12px;
 }
-#cpu {
-    margin-left: 5px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
+
+#network {
+    color: @rosewater;
+}
+#bluetooth {
+    color: @flamingo;
+}
+#memory {
+    color: @pink;
+}
+#battery {
+    color: @mauve;
+}
+
+#backlight {
+    color: @red;
+}
+#pulseaudio {
+    color: @maroon;
+}
+#clock {
+    color: @peach;
+}
+#custom-power {
     padding-left: 10px;
-    border-left: 1px solid @overlay2;
+    font-size: 20px;
+    color: @red;
 }
-#pulseaudio,
-#battery {
-    border-right: 1px solid @overlay2;
+
+#bluetooth.off
+#bluetooth.disabled {
+    color: @red;
 }
-/*
-#pulseaudio,
-#battery {
-    margin-right: 5px;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    padding-right: 5px;
-    border-right: 1px solid @border_color;
+
+#bluetooth.connected {
+    color: @green;
 }
-#clock, 
-*/
 #tray {
-    border: 1px solid @overlay2;
+    /* border: 1px solid @overlay2; */
     margin: 3 0px;
     margin-right: 5px;
     padding-right: 10px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-}
-
-#pulseaudio,
-#backlight,
-#network {
-    color: @blue;
-}
-#clock {
-    color: @sapphire;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -169,19 +169,18 @@ label:focus {
     -gtk-icon-effect: highlight;
 }
 #mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
+    color: @pink;
 }
 
 #mpd.disconnected {
-    background-color: #f53c3c;
+    color: @pink;
 }
 
 #mpd.stopped {
-    background-color: #90b1b1;
+    color: @pink;
 }
 
 #mpd.paused {
-    background-color: #51a37a;
+    color: @pink;
 }
 
