@@ -9,6 +9,7 @@
       ./alacritty.nix
       ./starship.nix
       ./nushell.nix
+      ./wezterm.nix
       ./application.nix
     ];
 }

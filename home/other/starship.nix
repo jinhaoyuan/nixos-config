@@ -17,14 +17,14 @@
         right_format = "$time";
         continuation_prompt = "[ ▶▶ ](bold purple)";
         character = {
-          success_symbol = "[ ➜](bold purple)";
+          success_symbol = "[ ~>](bold purple)";
         };
 	directory = {
 	  read_only = " 󰌾";
 	  home_symbol = " 󰻺 ";
 	};
 	os = {
-	  format = "[$symbol]($style)";
+	  format = "[ $symbol]($style)";
 	  style = "bold blue";
 	  disabled = false;
 	};
