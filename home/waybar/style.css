@@ -60,6 +60,29 @@ button:hover {
 #workspaces button.active {
     color: @mauve;
 }
+#cava {
+    color: @pink;
+}
+#mpd {
+    /* padding: 0 8px;
+    border-radius: 8px;
+    border-color: @green;
+    border-style: solid;
+    border-width: 0 2px; */
+    color: @pink;
+}
+
+#mpd.disconnected {
+    color: @red;
+}
+
+#mpd.stopped {
+    color: @yellow;
+}
+
+#mpd.paused {
+    color: @sky;
+}
 #clock,
 #tray,
 #network,
@@ -168,19 +191,5 @@ label:focus {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
 }
-#mpd {
-    color: @pink;
-}
 
-#mpd.disconnected {
-    color: @pink;
-}
-
-#mpd.stopped {
-    color: @pink;
-}
-
-#mpd.paused {
-    color: @pink;
-}
 

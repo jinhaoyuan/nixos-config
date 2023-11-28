@@ -1,8 +1,5 @@
 { config, lib, pkgs, ... }:
 {
-  imports = 
-    [
-    ];
   xdg.portal = {
     enable = true;
     wlr.enable = false;
@@ -17,11 +14,11 @@
     xserver = {
       enable = true;
       displayManager = {
-	defaultSession = "hyprland";
-	gdm = {
-	  enable = true;
-	  wayland = true;
-	};
+	      defaultSession = "hyprland";
+	      gdm = {
+	        enable = true;
+	        wayland = true;
+	      };
       };
       desktopManager = {
         gnome.enable = false;

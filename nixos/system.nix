@@ -9,6 +9,8 @@
       ./boot.nix
       ./fonts.nix
       ./i18n.nix
+      ./env.nix
+      ./sound.nix
       ./services.nix
     ];
   fileSystems."/" =
@@ -45,10 +47,7 @@
   # Set your time zone.
   time.timeZone = "Asia/Shanghai";
 
-  # Enable sound.
-  sound.enable = true;
-  hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+  
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
@@ -93,35 +92,11 @@
     package = config.boot.kernelPackages.nvidiaPackages.production;
 
     prime = {
-	sync.enable = true;
-	# Make sure to use the correct Bus ID values for your system!
-	intelBusId = "PCI:0:2:0";
-	nvidiaBusId = "PCI:1:0:0";
+	    sync.enable = true;
+	    # Make sure to use the correct Bus ID values for your system!
+	    intelBusId = "PCI:0:2:0";
+	    nvidiaBusId = "PCI:1:0:0";
     };
-  };
-
-  # $ nix search wget
-  environment = {
-    variables = {
-        GTK_IM_MODULE = "fcitx";
-        QT_IM_MODULE = "fcitx";
-        XMODIFIERS = "@im=fcitx";
-        SDL_IM_MODULE = "fcitx";
-    };	
-    systemPackages = with pkgs; [
-	    git
-	    zsh
-      vim 
-      wget
-	    curl
-      firefox
-	    v2ray
-	    v2raya
-	    qemu
-	    virt-manager 
-	    iproute2
-      podman-compose
-    ];
   };
   nix = {
     settings = {

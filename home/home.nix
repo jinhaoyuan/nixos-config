@@ -48,6 +48,7 @@
     emacs29
     udiskie
     libqalculate
+    cava
 
     # terminal
     alacritty
