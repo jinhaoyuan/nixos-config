@@ -11,8 +11,8 @@
     systemPackages = with pkgs; [
 	    git
 	    zsh
-        nushell
         vim
+        helix
 	    curl
         firefox
 	    v2ray

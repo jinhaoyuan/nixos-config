@@ -14,7 +14,7 @@
       jinhaoyuan = {
         hashedPassword = "$y$j9T$KUQP4YthE10tvID0H43ca.$nJfVHEE.2Br52KACCVe8b84kKkLaM6doxMHSGAN3IH8";
         isNormalUser = true;
-        shell = pkgs.zsh;
+        shell = pkgs.nushell;
 	      ignoreShellProgramCheck = true;
         description = "jinhaoyuan home";
         home = "/home/jinhaoyuan";

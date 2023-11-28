@@ -52,8 +52,10 @@
 
     # terminal
     alacritty
+    wezterm
     tmux
     zellij
+
 
     # terminal-tools
     joshuto
