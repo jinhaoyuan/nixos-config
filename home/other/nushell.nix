@@ -4,14 +4,17 @@
     nushell = { 
       enable = true;
       extraConfig = ''
-        show_banner: false,
+        let carapace_completer = {|spans|
+        carapace $spans.0 nushell $spans | from json
+        }
+        $env.config = {
+          show_banner: false,
+        }
       '';
       extraEnv = ''
 
       '';
       shellAliases = {
-        setproxy = "$env.ALL_PROXY = 'http:127.0.0.1:20170'";
-        unsetproxy = "hide ALL_PROXY";
         vi = "hx";
         vim = "hx";
         nano = "hx";

@@ -27,7 +27,7 @@
     
 
     # GUI
-    obs-studio
+    # obs-studio
     vscode
     yesplaymusic
     telegram-desktop
