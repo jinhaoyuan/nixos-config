@@ -4,6 +4,7 @@
     font-family: "Fira Code Nerd Font";
     font-size: 13px;
 }
+#submap,
 #window {
     transition: none;
     color: @peach;
@@ -32,6 +33,7 @@ button:hover {
     background: inherit;
     box-shadow: inset 0 -3px #ffffff;
 }
+
 #custom-launcher {
     padding-left: 10px;
     font-size: 20px;

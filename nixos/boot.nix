@@ -12,6 +12,9 @@
     kernelPackages = pkgs.linuxPackages_latest;
     kernelModules = [ "kvm-intel" ];
     extraModulePackages = [ ];
+    extraModprobeConfig = ''
+      options hid_apple fnmode=2
+    '';
     loader = {
        grub = {
            enable = true;

@@ -3,7 +3,7 @@
   home.packages = with pkgs;[
     rofi-bluetooth
     rofi-vpn
-    rofi-power-menu
+    rofi-mpd
   ];
   programs = {
     rofi = {
@@ -12,6 +12,7 @@
       plugins = with pkgs;[ 
         rofi-emoji
         rofi-calc
+        rofi-power-menu
       ];
       pass = {
         enable = true;

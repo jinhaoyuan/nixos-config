@@ -36,6 +36,11 @@
     
     
     # tools
+    gdb
+    clang
+    cmake
+    clang-tools
+    playerctl
     mpv
     imv
     ncmpcpp

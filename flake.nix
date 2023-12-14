@@ -31,7 +31,7 @@
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
-    }
+    };
 
     # community wayland nixpkgs
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
@@ -94,10 +94,6 @@
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
-        system.packages = [ 
-          anyrun.packages.${system}.anyrun
-        ];
 
         # specialArgs = inputs;  # 将 inputs 中的参数传入所有子模块
         modules = [

@@ -9,14 +9,19 @@
     // "margin-bottom": 10,
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["custom/launcher", "hyprland/workspaces", "cava"],
+    "modules-left": ["custom/launcher", "hyprland/workspaces", "hyprland/submap"],
     "modules-center": ["mpd"],
-    "modules-right": ["network","bluetooth", "memory","battery","backlight","pulseaudio","clock","custom/power"],
+    "modules-right": ["cava", "network","bluetooth", "group/hardware", "backlight","pulseaudio","clock","custom/power"],
     // Modules configuration
     "custom/launcher":{
         "format": "󱄅 ",
         "on-click": "rofi -show drun",
         "on-click-right": "killall rofi"
+    },
+    "hyprland/submap": {
+        "format": "> {}",
+        // "max-length": 8,
+        "tooltip": false
     },
     "hyprland/workspaces": {
 	"format": "{icon}",
@@ -95,6 +100,20 @@
         "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
         "on-click": "rofi-bluetooth"
     },
+    "group/hardware": {
+		"orientation": "inherit",
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false,
+        },
+		"modules": [
+            "battery",
+			"memory",
+            "cpu",
+            "disk"
+		]
+	},
     "battery": {
         "bat": "BAT0",
         "interval": 60,

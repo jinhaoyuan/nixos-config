@@ -12,6 +12,7 @@
       ./env.nix
       ./sound.nix
       ./services.nix
+      ./program_language.nix
     ];
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/2f8923f1-abd3-4486-9e29-7ca817a4a351";
@@ -101,10 +102,15 @@
   nix = {
     settings = {
       auto-optimise-store = true;
+      builders-use-substitutes = true;
       trusted-users = [ "jinhaoyuan" ];      
       experimental-features = [ "nix-command" "flakes" ]; 
       substituters = [ 
         "https://mirrors.ustc.edu.cn/nix-channels/store" 
+        "https://anyrun.cachix.org"
+      ];
+      trusted-public-keys = [
+        "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
       ];
     };
     gc = {
@@ -112,6 +118,7 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+    
   };
 
   system.stateVersion = "23.05";

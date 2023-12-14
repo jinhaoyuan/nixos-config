@@ -10,6 +10,7 @@
       ./starship.nix
       ./nushell.nix
       ./wezterm.nix
+      # ./anyrun.nix
       ./application.nix
     ];
 }
