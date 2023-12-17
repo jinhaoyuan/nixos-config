@@ -1,5 +1,4 @@
-{ config, lib, pkgs, ... }:
-{
+{ config, lib, pkgs, ... }: {
   xdg.portal = {
     enable = true;
     wlr.enable = false;
@@ -14,11 +13,11 @@
     xserver = {
       enable = true;
       displayManager = {
-	      defaultSession = "hyprland";
-	      gdm = {
-	        enable = true;
-	        wayland = true;
-	      };
+        defaultSession = "hyprland";
+        gdm = {
+          enable = true;
+          wayland = true;
+        };
       };
       desktopManager = {
         gnome.enable = false;
@@ -27,20 +26,17 @@
     };
     v2raya.enable = true;
     blueman.enable = true;
-    openssh = {
-      enable = true;
-    };
+    openssh = { enable = true; };
+
   };
 
   programs = {
     light.enable = true;
     hyprland = {
       enable = true;
-    
-      xwayland = {
-        enable = true;
-      };
-    
+
+      xwayland = { enable = true; };
+
       nvidiaPatches = true;
     };
     ssh = {
@@ -50,12 +46,10 @@
           Port 443
           User git
       '';
-  };
-  }; 
-  virtualisation = {
-    libvirtd = {
-      enable = true;
     };
+  };
+  virtualisation = {
+    libvirtd = { enable = true; };
     # docker = {
     #   enable = true;
     #   storageDriver = "btrfs";

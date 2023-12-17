@@ -13,6 +13,7 @@
       ./sound.nix
       ./services.nix
       ./program_language.nix
+      ./editor.nix
     ];
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/2f8923f1-abd3-4486-9e29-7ca817a4a351";

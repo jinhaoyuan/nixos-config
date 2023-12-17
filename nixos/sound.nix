@@ -1,10 +1,10 @@
-{ config, lib, pkgs, ... }:
-{
-    # Enable sound.
+{ config, lib, pkgs, ... }: {
+  # Enable sound.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
-  hardware.pulseaudio.extraConfig = "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
-  
+  hardware.pulseaudio.extraConfig =
+    "load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1";
+
   services = {
     mpd = {
       enable = true;
@@ -28,8 +28,10 @@
       '';
 
       # Optional:
-      network.listenAddress = "any"; # if you want to allow non-localhost connections
-      startWhenNeeded = true; # systemd feature: only start MPD service upon connection to its socket
+      network.listenAddress =
+        "any"; # if you want to allow non-localhost connections
+      startWhenNeeded =
+        true; # systemd feature: only start MPD service upon connection to its socket
     };
   };
 

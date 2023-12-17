@@ -1,30 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  imports = 
-    [
-      ./programs.nix
-      ./hyprland
-      ./other
-      ./waybar
-      ./fcitx5
-    ];
+  imports = [ ./programs.nix ./hyprland ./other ./waybar ./fcitx5 ];
   home = {
     username = "jinhaoyuan";
     homeDirectory = "/home/jinhaoyuan";
     stateVersion = "23.05";
   };
-  home.packages = with pkgs;[
+  home.packages = with pkgs; [
     # desktop
     eww-wayland
     hyprpaper
     waybar
     # dunst 
     mako
-    wlogout 
+    wlogout
     swaylock-effects
     # rofi-wayland
-    
 
     # GUI
     # obs-studio
@@ -33,8 +25,7 @@
     telegram-desktop
     discord
     podman-desktop
-    
-    
+
     # tools
     gdb
     clang
@@ -47,10 +38,10 @@
     toastify
     cliphist
     wl-clipboard
-    swaybg 
-    slurp 
+    swaybg
+    slurp
     grim
-    emacs29
+    nixfmt
     udiskie
     libqalculate
     cava
@@ -61,6 +52,15 @@
     tmux
     zellij
 
+    #emacs
+    # emacs
+    nodejs
+    wmctrl
+    xdotool
+    # eaf-browser
+    aria
+    # eaf-file-manager
+    fd
 
     # terminal-tools
     joshuto
@@ -72,9 +72,9 @@
     zsh-syntax-highlighting
     autojump
     starship
-   
+
     # backlight
-    light 
+    light
 
     # archives
     zip
@@ -93,7 +93,7 @@
     tree
 
     # productivity
-    btop  # replacement of htop/nmon
+    btop # replacement of htop/nmon
     iotop # io monitoring
     iftop # network monitoring
     fzf

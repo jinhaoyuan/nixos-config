@@ -21,6 +21,8 @@
 	    virt-manager 
 	    iproute2
         podman-compose
+        libgcc
+        pkg-config
     ];
   };
 }
