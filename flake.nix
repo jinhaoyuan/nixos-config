@@ -9,13 +9,11 @@
     ];
 
     # nix community's cache server
-    extra-substituters = [
-      "https://nix-community.cachix.org"
-    ];
+    extra-substituters = [ "https://nix-community.cachix.org" ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
-  };  
+  };
 
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
@@ -32,6 +30,8 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
 
     # community wayland nixpkgs
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
@@ -85,9 +85,7 @@
       url = "github:catppuccin/qt5ct";
       flake = false;
     };
-    
-    
-  
+
   };
 
   outputs = { self, nixpkgs, home-manager, anyrun, ... }@inputs: {
@@ -95,19 +93,17 @@
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        # specialArgs = inputs;  # 将 inputs 中的参数传入所有子模块
+        specialArgs = inputs;  # 将 inputs 中的参数传入所有子模块
         modules = [
           ./nixos/system.nix
-	  home-manager.nixosModules.home-manager
+          home-manager.nixosModules.home-manager
           {
             home-manager = {
-	      useGlobalPkgs = true;
+              useGlobalPkgs = true;
               useUserPackages = true;
               extraSpecialArgs = inputs;
-              users = {
-		jinhaoyuan = import ./home/home.nix;
-	      };
-	    };
+              users = { jinhaoyuan = import ./home/home.nix; };
+            };
           }
         ];
       };

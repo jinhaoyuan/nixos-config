@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./programs.nix ./hyprland ./other ./waybar ./fcitx5 ];
+  imports = [ ./programs.nix ./hyprland ./other ./waybar ./fcitx5 ./neovim];
   home = {
     username = "jinhaoyuan";
     homeDirectory = "/home/jinhaoyuan";
