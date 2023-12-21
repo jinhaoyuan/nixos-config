@@ -33,6 +33,9 @@
 
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
 
+    nixneovim = { url = "github:nixneovim/nixneovim"; };
+    vim-extra-plugins = { url = "github:m15a/nixpkgs-vim-extra-plugins"; };
+
     # community wayland nixpkgs
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
 
@@ -88,12 +91,16 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, anyrun, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+    nixpkgs.overlays = [
+      inputs.nixneovim.overlays.default
+      inputs.vim-extra-plugins.overlays.default
+    ];
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
-        specialArgs = inputs;  # 将 inputs 中的参数传入所有子模块
+        specialArgs = inputs; # 将 inputs 中的参数传入所有子模块
         modules = [
           ./nixos/system.nix
           home-manager.nixosModules.home-manager
