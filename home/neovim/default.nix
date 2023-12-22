@@ -1,11 +1,5 @@
-{ config, pkgs, nixneovim, vim-extra-plugins, ... }: 
-{
-  imports = [
-    nixneovim.nixosModules.default # with Home Manager unstable
-    # nixneovim.nixosModules.homeManager-23-11 # with Home Manager 22.11
-    # nixneovim.nixosModules.nixos # without Home Manager
-  ];
-  
+{ config, pkgs, lib, ... }: 
+{ 
   programs.nixneovim = {
     enable = true;
     defaultEditor = true;
@@ -15,37 +9,37 @@
     colorscheme = "catppuccin-macchiato";
 
     plugins = {
-      nvim-cmp = {
-        enable = true;
-        sources = {
-          buffer.enable = true;
-          nvim_lsp.enable = true;
-          zsh.enable = true;
-          cmp-cmdline-history.enable = true;
-          luasnip.enable = true;
-        };
-        mapping = {
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
-          "<Tab>" = {
-            modes = [ "i" "s" ];
-            action = ''
-              function(fallback)
-                if cmp.visible() then
-                  cmp.select_next_item()
-                elseif luasnip.expandable() then
-                  luasnip.expand()
-                elseif luasnip.expand_or_jumpable() then
-                  luasnip.expand_or_jump()
-                elseif check_backspace() then
-                  fallback()
-                else
-                  fallback()
-                end
-              end
-            '';
-          };
-        };
-      };
+      # nvim-cmp = {
+      #   enable = true;
+      #   sources = {
+      #     buffer.enable = true;
+      #     nvim_lsp.enable = true;
+      #     zsh.enable = true;
+      #     cmp-cmdline-history.enable = true;
+      #     luasnip.enable = true;
+      #   };
+      #   mapping = {
+      #     "<CR>" = "cmp.mapping.confirm({ select = true })";
+      #     "<Tab>" = {
+      #       modes = [ "i" "s" ];
+      #       action = ''
+      #         function(fallback)
+      #           if cmp.visible() then
+      #             cmp.select_next_item()
+      #           elseif luasnip.expandable() then
+      #             luasnip.expand()
+      #           elseif luasnip.expand_or_jumpable() then
+      #             luasnip.expand_or_jump()
+      #           elseif check_backspace() then
+      #             fallback()
+      #           else
+      #             fallback()
+      #           end
+      #         end
+      #       '';
+      #     };
+      #   };
+      # };
 
       lspconfig = {
         servers = {
@@ -64,7 +58,7 @@
       };
     };
 
-    extraPlugins = [ pkgs.vimPlugins.catppuccin-nvim ];
+    extraPlugins = [ pkgs.vimExtraPlugins.catppuccin ];
 
     mappings = {
       normal = {

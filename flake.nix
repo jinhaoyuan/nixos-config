@@ -34,7 +34,7 @@
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
 
     nixneovim = { url = "github:nixneovim/nixneovim"; };
-    vim-extra-plugins = { url = "github:m15a/nixpkgs-vim-extra-plugins"; };
+    nixneovimplugins = { url = "github:jooooscha/nixpkgs-vim-extra-plugins"; };
 
     # community wayland nixpkgs
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
@@ -94,7 +94,7 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixpkgs.overlays = [
       inputs.nixneovim.overlays.default
-      inputs.vim-extra-plugins.overlays.default
+      inputs.nixneovimplugins.overlays.default
     ];
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {

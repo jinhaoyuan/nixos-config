@@ -1,7 +1,15 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixneovim, ... }:
 
 {
-  imports = [ ./programs.nix ./hyprland ./other ./waybar ./fcitx5 ./neovim];
+  imports = [
+    nixneovim.nixosModules.default
+    ./programs.nix
+    ./hyprland
+    ./other
+    ./waybar
+    ./fcitx5
+    ./neovim
+  ];
   home = {
     username = "jinhaoyuan";
     homeDirectory = "/home/jinhaoyuan";
@@ -105,4 +113,6 @@
     lsof # list open files
     lshw
   ];
+
+  
 }

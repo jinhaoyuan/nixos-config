@@ -37,7 +37,7 @@
 
       xwayland = { enable = true; };
 
-      nvidiaPatches = true;
+      # nvidiaPatches = true;
     };
     ssh = {
       extraConfig = ''
