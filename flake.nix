@@ -17,7 +17,7 @@
 
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     # home-manager，用于管理用户配置
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -92,10 +92,10 @@
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixpkgs.overlays = [
-      inputs.nixneovim.overlays.default
-      inputs.nixneovimplugins.overlays.default
-    ];
+    # nixpkgs.overlays = [
+    #   inputs.nixneovim.overlays.default
+    #   inputs.nixneovimplugins.overlays.default
+    # ];
     nixosConfigurations = {
       "nixos" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
