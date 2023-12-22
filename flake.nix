@@ -1,19 +1,19 @@
 {
   description = "jhy's NixOS Flake";
-  # nixConfig = {
-  #   experimental-features = [ "nix-command" "flakes" ];
-  #   substituters = [
-  #     # replace official cache with a mirror located in China
-  #     "https://mirrors.ustc.edu.cn/nix-channels/store"
-  #     "https://cache.nixos.org/"
-  #   ];
+  nixConfig = {
+    experimental-features = [ "nix-command" "flakes" ];
+    substituters = [
+      # replace official cache with a mirror located in China
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+      "https://cache.nixos.org/"
+    ];
 
-  #   # nix community's cache server
-  #   extra-substituters = [ "https://nix-community.cachix.org" ];
-  #   extra-trusted-public-keys = [
-  #     "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-  #   ];
-  # };
+    # nix community's cache server
+    extra-substituters = [ "https://nix-community.cachix.org" ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
 
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
@@ -102,7 +102,7 @@
       pkgs = import nixpkgs { inherit overlays; };
     in flake-utils.lib.eachDefaultSystem (system: {
       nixosConfigurations = {
-        nixos = pkgs.lib.nixosSystem {
+        "nixos" = pkgs.lib.nixosSystem {
           system = system;
           specialArgs = { inherit inputs pkgs; };
           modules = [
