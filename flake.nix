@@ -1,19 +1,5 @@
 {
   description = "jhy's NixOS Flake";
-  nixConfig = {
-    experimental-features = [ "nix-command" "flakes" ];
-    substituters = [
-      # replace official cache with a mirror located in China
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://cache.nixos.org/"
-    ];
-
-    # nix community's cache server
-    extra-substituters = [ "https://nix-community.cachix.org" ];
-    extra-trusted-public-keys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
-  };
 
   inputs = {
     # NixOS 官方软件源，这里使用 nixos-unstable 分支
@@ -93,56 +79,35 @@
   };
   outputs = { self, nixpkgs, flake-utils, home-manager, ... }@inputs:
     let
+      system = "x86_64-linux";
       # 创建一个方便地使用 overlays 的函数
       overlays = [
         inputs.nixneovim.overlays.default
         inputs.nixneovimplugins.overlays.default
       ];
-      # 构建一个带有 overlays 的 pkgs 实例
-      pkgs = import nixpkgs { inherit overlays; };
-    in flake-utils.lib.eachDefaultSystem (system: {
+      pkgs = import nixpkgs {
+        config.allowUnfree = true;
+        inherit overlays system;
+      };
+    in {
       nixosConfigurations = {
-        "nixos" = pkgs.lib.nixosSystem {
-          system = system;
+        nixos = nixpkgs.lib.nixosSystem {
+          inherit system;
           specialArgs = { inherit inputs pkgs; };
+
           modules = [
             ./nixos/system.nix
             home-manager.nixosModules.home-manager
-            ({
+            {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = inputs;
                 users = { jinhaoyuan = import ./home/home.nix; };
               };
-            })
+            }
           ];
         };
       };
-    });
-  # outputs = { self, nixpkgs, flake-utils, home-manager, ... }@inputs: {
-  #   nixpkgs.overlays = [
-  #     inputs.nixneovim.overlays.default
-  #     inputs.nixneovimplugins.overlays.default
-  #   ];
-  #   nixosConfigurations = {
-  #     "nixos" = nixpkgs.lib.nixosSystem {
-  #       system = "x86_64-linux";
-
-  #       specialArgs = inputs; # 将 inputs 中的参数传入所有子模块
-  #       modules = [
-  #         ./nixos/system.nix
-  #         home-manager.nixosModules.home-manager
-  #         {
-  #           home-manager = {
-  #             useGlobalPkgs = true;
-  #             useUserPackages = true;
-  #             extraSpecialArgs = inputs;
-  #             users = { jinhaoyuan = import ./home/home.nix; };
-  #           };
-  #         }
-  #       ];
-  #     };
-  #   };
-  # };
+    };
 }

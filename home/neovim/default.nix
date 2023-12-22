@@ -9,37 +9,38 @@
     colorscheme = "catppuccin-macchiato";
 
     plugins = {
-      # nvim-cmp = {
-      #   enable = true;
-      #   sources = {
-      #     buffer.enable = true;
-      #     nvim_lsp.enable = true;
-      #     zsh.enable = true;
-      #     cmp-cmdline-history.enable = true;
-      #     luasnip.enable = true;
-      #   };
-      #   mapping = {
-      #     "<CR>" = "cmp.mapping.confirm({ select = true })";
-      #     "<Tab>" = {
-      #       modes = [ "i" "s" ];
-      #       action = ''
-      #         function(fallback)
-      #           if cmp.visible() then
-      #             cmp.select_next_item()
-      #           elseif luasnip.expandable() then
-      #             luasnip.expand()
-      #           elseif luasnip.expand_or_jumpable() then
-      #             luasnip.expand_or_jump()
-      #           elseif check_backspace() then
-      #             fallback()
-      #           else
-      #             fallback()
-      #           end
-      #         end
-      #       '';
-      #     };
-      #   };
-      # };
+      nvim-cmp = {
+        enable = true;
+        sources = {
+          buffer.enable = true;
+          nvim_lsp.enable = true;
+          zsh.enable = true;
+          cmp-cmdline-history.enable = true;
+          luasnip.enable = true;
+        };
+        snippet.luasnip.enable = true;
+        mapping = {
+          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<Tab>" = {
+            modes = [ "i" "s" ];
+            action = ''
+              function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                elseif luasnip.expandable() then
+                  luasnip.expand()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                elseif check_backspace() then
+                  fallback()
+                else
+                  fallback()
+                end
+              end
+            '';
+          };
+        };
+      };
 
       lspconfig = {
         servers = {
@@ -90,8 +91,8 @@
       vim.opt.cursorline = true -- highlight cursor line underneath the cursor horizontally
       vim.opt.splitbelow = true -- open new vertical split bottom
       vim.opt.splitright = true -- open new horizontal splits right
-      -- vim.opt.termguicolors = true        -- enabl 24-bit RGB color in the TUI
-      -- vim.opt.showmode = false -- we are experienced, wo don't need the "-- INSERT --" mode hint
+      vim.opt.termguicolors = true        -- enabl 24-bit RGB color in the TUI
+      vim.opt.showmode = false -- we are experienced, wo don't need the "-- INSERT --" mode hint
 
       -- Searching
       -- vim.opt.incsearch = true -- search as characters are entered

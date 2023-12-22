@@ -13,7 +13,7 @@
       ./sound.nix
       ./services.nix
       ./program_language.nix
-      ./editor.nix
+      # ./editor.nix
     ];
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/2f8923f1-abd3-4486-9e29-7ca817a4a351";
@@ -105,13 +105,6 @@
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
-    binaryCaches = [
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
-      "https://cache.nixos.org/"
-    ];
-    binaryCachePublicKeys = [
-      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-    ];
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;
@@ -119,10 +112,12 @@
       experimental-features = [ "nix-command" "flakes" ]; 
       substituters = [ 
         "https://mirrors.ustc.edu.cn/nix-channels/store" 
+        "https://cache.nixos.org/"
         "https://anyrun.cachix.org"
       ];
       trusted-public-keys = [
         "anyrun.cachix.org-1:pqBobmOjI7nKlsUMV25u9QHa9btJK65/C8vnO3p346s="
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
     };
     gc = {

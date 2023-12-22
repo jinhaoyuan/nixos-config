@@ -6,7 +6,7 @@
     ];
   fonts = {
     fontDir.enable = true;
-    fonts = with pkgs; [
+    packages = with pkgs; [
       nerdfonts
       noto-fonts
       # noto-fonts-cjk-sans
