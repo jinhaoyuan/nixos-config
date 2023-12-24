@@ -8,7 +8,7 @@
     ./other
     ./waybar
     ./fcitx5
-    ./neovim
+    ./editors
   ];
   home = {
     username = "jinhaoyuan";
@@ -38,7 +38,6 @@
     gdb
     clang
     cmake
-    clang-tools
     playerctl
     mpv
     imv
@@ -49,7 +48,6 @@
     swaybg
     slurp
     grim
-    nixfmt
     udiskie
     libqalculate
     cava

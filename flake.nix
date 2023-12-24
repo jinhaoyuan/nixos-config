@@ -12,7 +12,7 @@
     };
     # modern window compositor
     hyprland.url = "github:hyprwm/Hyprland";
-
+ 
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";

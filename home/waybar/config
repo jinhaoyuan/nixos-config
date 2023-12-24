@@ -3,9 +3,9 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 15, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "margin-top": 5,
-    "margin-left": 10,
-    "margin-right": 10,
+    // "margin-top": 5,
+    // "margin-left": 10,
+    // "margin-right": 10,
     // "margin-bottom": 10,
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
