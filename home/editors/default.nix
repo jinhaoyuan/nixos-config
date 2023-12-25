@@ -5,11 +5,12 @@
     viAlias = true;
     vimAlias = true;
     withPython3 = true;
+    plugins = [ pkgs.vimPlugins.nvim-treesitter.withAllGrammars ];
+
   };
 
   home = {
     packages = with pkgs; [
-      
       tree-sitter
       # ---lsp---
       nixd
@@ -23,7 +24,7 @@
       nixfmt
       stylua
       rustfmt
-      
-    ]
-  }
+
+    ];
+  };
 }

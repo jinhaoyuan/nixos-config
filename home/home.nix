@@ -42,6 +42,7 @@
     mpv
     imv
     ncmpcpp
+    mpc-cli
     toastify
     cliphist
     wl-clipboard
@@ -67,6 +68,7 @@
     aria
     # eaf-file-manager
     fd
+    ripgrep
 
     # terminal-tools
     joshuto
