@@ -55,13 +55,16 @@ return {
                     },
                     dashboard = true,
                     flash = true,
-                    mason = true,
                     telescope = {
                         enabled = true,
                         -- style = "nvchad"
                     },
                     which_key = true,
                     lsp_saga = true,
+                    neogit = true,
+                    dap = true,
+                    dap_ui = true,
+                    mason = true,
                     -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
                 },
             })

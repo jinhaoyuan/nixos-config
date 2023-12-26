@@ -31,6 +31,7 @@
     vscode
     yesplaymusic
     telegram-desktop
+    qq
     discord
     podman-desktop
 

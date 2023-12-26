@@ -130,6 +130,9 @@ return {
                     end, opts)
                 end,
             }) ]]
+            vim.keymap.set('n', '<space>fm', function()
+                        vim.lsp.buf.format { async = true }
+                    end, opts)
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = { "rust", "nix", "c++" },
                 callback = function(args)
