@@ -12,7 +12,7 @@
     };
     # modern window compositor
     hyprland.url = "github:hyprwm/Hyprland";
- 
+
     anyrun = {
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -89,7 +89,8 @@
         config.allowUnfree = true;
         inherit overlays system;
       };
-    in {
+    in
+    {
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           inherit system;

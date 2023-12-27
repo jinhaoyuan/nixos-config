@@ -21,9 +21,11 @@
       clang-tools
 
       # ---format---
-      nixfmt
+      # nixfmt
+      nixpkgs-fmt
       stylua
       rustfmt
+      black
 
     ];
   };

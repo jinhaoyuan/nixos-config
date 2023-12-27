@@ -20,20 +20,19 @@
     eww-wayland
     hyprpaper
     waybar
-    # dunst 
     mako
     wlogout
     swaylock-effects
-    # rofi-wayland
 
     # GUI
-    # obs-studio
     vscode
     yesplaymusic
     telegram-desktop
     qq
     discord
     podman-desktop
+    rustdesk
+    spacedrive
 
     # tools
     gdb
@@ -56,22 +55,14 @@
 
     # terminal
     alacritty
-    wezterm
-    tmux
     zellij
 
-    #emacs
-    # emacs
     nodejs
     wmctrl
     xdotool
-    # eaf-browser
     aria
-    # eaf-file-manager
     fd
     ripgrep
-
-    # terminal-tools
     joshuto
 
     # shell
@@ -115,5 +106,4 @@
     lshw
   ];
 
-  
 }
