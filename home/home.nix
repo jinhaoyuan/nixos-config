@@ -1,4 +1,4 @@
-{ config, pkgs, nixneovim, ... }:
+{ config, pkgs, nixneovim, anyrun, ... }:
 
 {
   imports = [
@@ -17,7 +17,7 @@
   };
   home.packages = with pkgs; [
     # desktop
-    eww-wayland
+    # eww-wayland
     hyprpaper
     waybar
     mako
@@ -33,6 +33,7 @@
     podman-desktop
     rustdesk
     spacedrive
+    obsidian
 
     # tools
     gdb
@@ -52,11 +53,11 @@
     udiskie
     libqalculate
     cava
+    ffmpeg
 
     # terminal
     alacritty
     zellij
-
     nodejs
     wmctrl
     xdotool
@@ -91,6 +92,7 @@
     file
     which
     tree
+    jq
 
     # productivity
     btop # replacement of htop/nmon

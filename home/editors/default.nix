@@ -19,6 +19,11 @@
       pyright
       rust-analyzer
       clang-tools
+      nodePackages_latest.vscode-css-languageserver-bin
+      nodePackages_latest.typescript
+      nodePackages_latest.typescript-language-server
+      nodePackages_latest.vscode-langservers-extracted
+      nodePackages_latest.bash-language-server
 
       # ---format---
       # nixfmt
@@ -26,6 +31,8 @@
       stylua
       rustfmt
       black
+      beautysh
+      nodePackages.prettier
 
     ];
   };

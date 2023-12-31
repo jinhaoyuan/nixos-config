@@ -17,6 +17,7 @@
       url = "github:Kirottu/anyrun";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ags.url = "github:Aylur/ags";
 
     emacs-overlay = { url = "github:nix-community/emacs-overlay"; };
 
@@ -86,7 +87,12 @@
         inputs.nixneovimplugins.overlays.default
       ];
       pkgs = import nixpkgs {
-        config.allowUnfree = true;
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [
+            "electron-25.9.0"
+          ];
+        };
         inherit overlays system;
       };
     in
