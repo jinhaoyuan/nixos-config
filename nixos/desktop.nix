@@ -26,6 +26,10 @@
         xterm.enable = false;
       };
     };
-    gnome.gnome-browser-connector.enable = true;
+    gnome = {
+      gnome-browser-connector.enable = true;
+      gnome-online-accounts.enable = true;
+      gnome-settings-daemon.enable = true;
+    };
   };
 }

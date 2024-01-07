@@ -13,7 +13,7 @@
         accents = [ "blue" "flamingo" "green" "lavender" "maroon" "mauve" "peach" "pink" "red" "rosewater" "sapphire" "sky" "teal" "yellow" ];
         # accents = [ "pink" ];
         # size = "compact";
-        tweaks = [ "rimless" "black" ];
+        tweaks = [ "rimless" ];
         variant = "macchiato";
       };
     };

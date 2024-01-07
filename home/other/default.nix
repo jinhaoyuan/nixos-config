@@ -3,15 +3,24 @@
 {
   imports =
     [
+      #---------common-------
       ./btop.nix
-      ./rofi.nix
-      ./mako.nix
-      ./alacritty.nix
       ./starship.nix
-      ./nushell.nix
-      ./wezterm.nix
-      ./anyrun.nix
-      ./ags.nix
       ./application.nix
+      
+
+      #-------hyprland-------
+      # ./rofi.nix
+      # ./mako.nix
+      # ./alacritty.nix
+      # ./nushell.nix
+      # ./wezterm.nix
+      # ./anyrun.nix
+      # ./ags.nix
+
+      #--------gnome---------
+      ./firefox.nix
+      ./gnome-terminal
+
     ];
 }

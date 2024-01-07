@@ -1,30 +1,6 @@
 { config, lib, pkgs, ... }: {
-  xdg.portal = {
-    enable = true;
-    wlr.enable = false;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      # xdg-desktop-portal-hyprland
-      # xdg-desktop-portal-gtk
-    ];
-  };
   # Enable the X11 windowing system.
   services = {
-    xserver = {
-      enable = true;
-      displayManager = {
-        # defaultSession = "hyprland";
-        defaultSession = "gnome";
-        gdm = {
-          enable = true;
-          wayland = true;
-        };
-      };
-      desktopManager = {
-        gnome.enable = true;
-        xterm.enable = false;
-      };
-    };
     v2raya.enable = true;
     blueman.enable = true;
     openssh = { enable = true; };

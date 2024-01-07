@@ -13,6 +13,7 @@
       ./sound.nix
       ./services.nix
       ./program_language.nix
+      ./desktop.nix
       # ./editor.nix
     ];
   fileSystems."/" =

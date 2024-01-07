@@ -55,6 +55,7 @@
     libqalculate
     cava
     ffmpeg
+    ocs-url
 
     # terminal
     alacritty

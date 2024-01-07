@@ -22,6 +22,7 @@
       podman-compose
       libgcc
       pkg-config
+      gnome.gnome-themes-extra
     ];
   };
 }
