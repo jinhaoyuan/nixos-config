@@ -17,7 +17,7 @@
   };
   home.packages = with pkgs; [
     # desktop
-    # eww-wayland
+    eww-wayland
     hyprpaper
     waybar
     mako
@@ -34,6 +34,7 @@
     rustdesk
     spacedrive
     obsidian
+    gnome.gnome-tweaks
 
     # tools
     gdb

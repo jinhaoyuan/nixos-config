@@ -1,7 +1,7 @@
-{...}:
+{ ... }:
 
 {
-    imports = 
+  imports =
     [
       ./btop.nix
       ./rofi.nix
@@ -10,7 +10,8 @@
       ./starship.nix
       ./nushell.nix
       ./wezterm.nix
-      # ./anyrun.nix
+      ./anyrun.nix
+      ./ags.nix
       ./application.nix
     ];
 }

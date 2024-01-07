@@ -1,4 +1,4 @@
-{config, pkgs, anyrun, ...}:
+{ config, pkgs, anyrun, ... }:
 {
   imports = [
     anyrun.homeManagerModules.default
