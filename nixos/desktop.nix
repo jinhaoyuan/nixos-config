@@ -3,7 +3,7 @@
     enable = true;
     wlr.enable = false;
     extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
+      # xdg-desktop-portal-wlr
       xdg-desktop-portal-gnome
       # xdg-desktop-portal-hyprland
       # xdg-desktop-portal-gtk
@@ -31,5 +31,27 @@
       gnome-online-accounts.enable = true;
       gnome-settings-daemon.enable = true;
     };
+  };
+  environment.gnome.excludePackages = (with pkgs; [
+    # gnome-photos
+    gnome-tour
+  ]) ++ (with pkgs.gnome; [
+    # cheese # webcam tool
+    # gnome-music
+    # gedit # text editor
+    epiphany # web browser
+    # geary # email reader
+    # evince # document viewer
+    # gnome-characters
+    # totem # video player
+    tali # poker game
+    iagno # go game
+    hitori # sudoku game
+    atomix # puzzle game
+  ]);
+  qt = {
+    enable = true;
+    # platformTheme = "gnome";
+    style = "kvantum";
   };
 }

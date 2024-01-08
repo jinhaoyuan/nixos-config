@@ -4,19 +4,20 @@
     v2raya.enable = true;
     blueman.enable = true;
     openssh = { enable = true; };
-    upower.enable = true;
+    flatpak.enable = true;
+    # upower.enable = true;
 
   };
 
   programs = {
     light.enable = true;
-    hyprland = {
-      enable = true;
+    # hyprland = {
+    #   enable = true;
 
-      xwayland = { enable = true; };
+    #   xwayland = { enable = true; };
 
-      # nvidiaPatches = true;
-    };
+    #   # nvidiaPatches = true;
+    # };
     ssh = {
       extraConfig = ''
         Host github.com

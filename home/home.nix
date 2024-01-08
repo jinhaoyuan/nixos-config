@@ -4,9 +4,9 @@
   imports = [
     nixneovim.nixosModules.default
     ./programs.nix
-    ./hyprland
+    # ./hyprland
     ./other
-    ./waybar
+    # ./waybar
     ./fcitx5
     ./editors
   ];
@@ -16,16 +16,8 @@
     stateVersion = "23.05";
   };
   home.packages = with pkgs; [
-    # desktop
-    eww-wayland
-    hyprpaper
-    waybar
-    mako
-    wlogout
-    swaylock-effects
-
     # GUI
-    vscode
+    # vscode
     yesplaymusic
     telegram-desktop
     qq
@@ -35,6 +27,7 @@
     spacedrive
     obsidian
     gnome.gnome-tweaks
+    gnome.gnome-software
 
     # tools
     gdb
@@ -43,22 +36,17 @@
     playerctl
     mpv
     imv
-    ncmpcpp
-    mpc-cli
     toastify
-    cliphist
-    wl-clipboard
-    swaybg
-    slurp
-    grim
     udiskie
     libqalculate
     cava
     ffmpeg
     ocs-url
+    qgnomeplatform
+    libsForQt5.qtstyleplugin-kvantum
 
     # terminal
-    alacritty
+    gnome.gnome-terminal
     zellij
     nodejs
     wmctrl

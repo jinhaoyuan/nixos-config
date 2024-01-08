@@ -42,24 +42,15 @@
     };
     obs-studio = {
       enable = true;
-      plugins = with pkgs.obs-studio-plugins;
-        [
-          wlrobs
-          # obs-backgroundremoval
-          # obs-pipewire-audio-capture
-        ];
-    };
-    ncmpcpp = { 
-      enable = true;
-      # mpdMusicDir = "~/Music"; 
-      mpdMusicDir = null; 
+      # plugins = with pkgs.obs-studio-plugins;
+      #   [
+      #     wlrobs
+      #     # obs-backgroundremoval
+      #     # obs-pipewire-audio-capture
+      #   ];
     };
   };
-  home.file = {
-    ".config/ncmpcpp/config".text = ''
-      mpd_music_dir = ~/Music
-    '';
-  };
+  
   services = {
     mpd = {
       enable = true;
@@ -90,6 +81,9 @@
           true; # systemd feature: only start MPD service upon connection to its socket
       };
     };
+    # flameshot = {
+    #   enable = true;
+    # };
   };
 
 

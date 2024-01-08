@@ -21,5 +21,34 @@
   # home.file.".xxx".text = ''
   #     xxx
   # '';
+  home.packages = with pkgs; [
+    eww-wayland
+    hyprpaper
+    waybar
+    mako
+    wlogout
+    swaylock-effects
+    ncmpcpp
+    mpc-cli
+
+    cliphist
+    wl-clipboard
+    swaybg
+    slurp
+    grim
+
+  ];
+  home.file = {
+    ".config/ncmpcpp/config".text = ''
+      mpd_music_dir = ~/Music
+    '';
+  };
+  programs = {
+    ncmpcpp = { 
+      enable = true;
+      # mpdMusicDir = "~/Music"; 
+      mpdMusicDir = null; 
+    };
+  };
  
 }

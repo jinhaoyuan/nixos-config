@@ -20,7 +20,6 @@
 
       #--------gnome---------
       ./firefox.nix
-      ./gnome-terminal
 
     ];
 }
