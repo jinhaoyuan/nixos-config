@@ -1,6 +1,11 @@
 { config, pkgs, ... }: {
   programs = {
     home-manager = { enable = true; };
+    direnv = {
+      enable = true;
+      enableZshIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
     git = {
       enable = true;
       userName = "jinhaoyuan";

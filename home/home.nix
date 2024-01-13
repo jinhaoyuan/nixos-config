@@ -30,15 +30,15 @@
     gnome.gnome-software
 
     # tools
-    gdb
-    clang
-    cmake
+    # gdb
+    # clang
+    # cmake
     playerctl
     mpv
     imv
     toastify
     udiskie
-    libqalculate
+    # libqalculate
     cava
     ffmpeg
     ocs-url

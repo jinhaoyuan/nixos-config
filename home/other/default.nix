@@ -20,6 +20,7 @@
 
       #--------gnome---------
       ./firefox.nix
+      # ./desktop.nix
 
     ];
 }
