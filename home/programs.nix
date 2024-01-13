@@ -43,6 +43,8 @@
       shellAliases = {
         "setproxy" = "export ALL_PROXY=http://127.0.0.1:20172";
         "unsetproxy" = "unset ALL_PROXY";
+        "ls" = "eza";
+        "find" = "fd";
       };
     };
     obs-studio = {
@@ -55,7 +57,7 @@
       #   ];
     };
   };
-  
+
   services = {
     mpd = {
       enable = true;

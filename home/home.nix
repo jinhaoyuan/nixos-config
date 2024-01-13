@@ -17,7 +17,6 @@
   };
   home.packages = with pkgs; [
     # GUI
-    # vscode
     yesplaymusic
     telegram-desktop
     qq
@@ -38,7 +37,6 @@
     imv
     toastify
     udiskie
-    # libqalculate
     cava
     ffmpeg
     ocs-url
@@ -53,8 +51,10 @@
     xdotool
     aria
     fd
+    eza
     ripgrep
     joshuto
+
 
     # shell
     oh-my-zsh
