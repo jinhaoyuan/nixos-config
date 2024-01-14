@@ -9,15 +9,20 @@ return {
             end
             gitsigns.setup({
                 signs = {
-                    add          = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
-                    change       = {
+                    add = { hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn" },
+                    change = {
                         hl = "GitSignsChange",
                         text = "│",
                         numhl = "GitSignsChangeNr",
                         linehl = "GitSignsChangeLn",
                     },
-                    delete       = { hl = "GitSignsDelete", text = "_", numhl = "GitSignsDeleteNr", linehl = "GitSignsDeleteLn" },
-                    topdelete    = {
+                    delete = {
+                        hl = "GitSignsDelete",
+                        text = "_",
+                        numhl = "GitSignsDeleteNr",
+                        linehl = "GitSignsDeleteLn",
+                    },
+                    topdelete = {
                         hl = "GitSignsDelete",
                         text = "‾",
                         numhl = "GitSignsDeleteNr",
@@ -29,8 +34,8 @@ return {
                         numhl = "GitSignsChangeNr",
                         linehl = "GitSignsChangeLn",
                     },
-                    changedelete = { text = '~' },
-                    untracked    = { text = '┆' },
+                    changedelete = { text = "~" },
+                    untracked = { text = "┆" },
                 },
                 signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
                 numhl = false,     -- Toggle with `:Gitsigns toggle_numhl`
@@ -65,6 +70,38 @@ return {
                     enable = false,
                 },
             })
+            local wk_status_ok, wk = pcall(require, "which-key")
+            if not wk_status_ok then
+                return
+            end
+            wk.register({
+                h = {
+                    name = "+gitsigns",
+                    s = { "<cmd>Gitsigns stage_hunk<CR>", "Stage Hunk" },
+                    r = { "<cmd>Gitsigns reset_hunk<CR>", "Reset Hunk" },
+                    S = { "<cmd>Gitsigns stage_buffer<CR>", "Stage Buffer" },
+                    u = { "<cmd>Gitsigns undo_stage_hunk<CR>", "Undo Stage Hunk" },
+                    R = { "<cmd>Gitsigns reset_buffer<CR>", "Reset Buffer" },
+                    p = { "<cmd>Gitsigns preview_hunk<CR>", "Preview Hunk" },
+                    b = { "<cmd>Gitsigns blame_line{full=true}<CR>", "Blame Line" },
+                    t = {
+                        name = "+toggle",
+                        b = { "<cmd>Gitsigns toggle_current_line_blame<CR>", "Toggle Blame" },
+                        d = { "<cmd>Gitsigns toggle_deleted<CR>", "Toggle Deleted" },
+                    },
+                    d = { "<cmd>Gitsigns diffthis<CR>", "Diff This" },
+                    D = { "<cmd>Gitsigns diffthis('~')<CR>", "Diff This ~" },
+                },
+            }, { prefix = "<leader>" })
+            wk.register({
+                h = {
+                    s = { ":<C-U>Gitsigns stage_hunk<CR>", "Stage Hunk" },
+                    r = { ":<C-U>Gitsigns reset_hunk<CR>", "Reset Hunk" },
+                },
+            }, { prefix = "<leader>", mode = "v" })
+            wk.register({
+                ih = { "<cmd>Gitsigns select_hunk<CR>", "Select Hunk" },
+            }, { mode = { "o", "x" } })
         end,
-    }
+    },
 }

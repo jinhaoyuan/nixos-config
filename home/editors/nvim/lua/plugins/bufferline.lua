@@ -1,7 +1,7 @@
 return {
     {
         "akinsho/bufferline.nvim",
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+        dependencies = { { "nvim-tree/nvim-web-devicons" } },
         config = function()
             local status_ok, bufferline = pcall(require, "bufferline")
             if not status_ok then
@@ -16,8 +16,8 @@ return {
                     --number_style = "superscript" | "subscript" | "" | { "none", "subscript" }, -- buffer_id at index 1, ordinal at index 2
                     close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
                     indicator = {
-                        icon = '▎', -- this should be omitted if indicator style is not 'icon'
-                        style = 'icon',
+                        icon = "▎", -- this should be omitted if indicator style is not 'icon'
+                        style = "icon",
                     },
                     buffer_close_icon = "x",
                     modified_icon = "●",
@@ -31,6 +31,7 @@ return {
                     diagnostics_update_in_insert = false,
                     offsets = {
                         {
+                            -- filetype = "neo-tree",
                             filetype = "NvimTree",
                             text = "File Explorer",
                             text_align = "center",
@@ -49,10 +50,24 @@ return {
                     always_show_bufferline = false,
                 },
             })
-            vim.keymap.set('n', '<A-=>', ':BufferLineCycleNext<CR>')
-            vim.keymap.set('n', '<A-->', ':BufferLineCyclePrev<CR>')
-            -- vim.keymap.set('n', '<leader>bcl', ':BufferLineCloseLeft<CR>')
-            -- vim.keymap.set('n', '<leader>bcr', ':BufferLineCloseRight<CR>')
+            vim.keymap.set("n", "<A-]>", ":BufferLineCycleNext<CR>")
+            vim.keymap.set("n", "<A-[>", ":BufferLineCyclePrev<CR>")
+            -- vim.api.nvim_del_keymap("n", "<Esc>")
+            local wk_status_ok, wk = pcall(require, "which-key")
+            if not wk_status_ok then
+                return
+            end
+            wk.register({
+                b = {
+                    name = "+bufferline",
+                    c = {
+                        name = "close",
+                        c = { ":bdelete<CR>", "Close Buffer" },
+                        l = { "<cmd>BufferLineCloseLeft<CR>", "Close Left" },
+                        r = { "<cmd>BufferLineCloseRight<CR>", "Close Right" },
+                    },
+                },
+            }, { prefix = "<leader>" })
         end,
-    }
+    },
 }

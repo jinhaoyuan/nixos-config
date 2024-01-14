@@ -15,7 +15,7 @@ return {
                 vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
             end
             vim.diagnostic.config({
-                virtual_text = false,
+                virtual_text = true,
                 signs = true,
                 underline = true,
                 update_in_insert = true,
@@ -34,8 +34,7 @@ return {
                             prefix = " ",
                             scope = "line",
                         }
-                        vim.diagnostic.show()
-                        vim.diagnostic.open_float(nil, opts)
+                        vim.diagnostic.open_float(opts)
                     end,
                 })
             end
@@ -45,12 +44,12 @@ return {
             if not status_ok then
                 return
             end
-            local servers = { 'nixd', 'rust_analyzer', 'clangd' }
+            local servers = { "nixd", "rust_analyzer", "clangd" }
             for _, lsp in ipairs(servers) do
-                lspconfig[lsp].setup {
+                lspconfig[lsp].setup({
                     on_attach = on_attach,
                     capabilities = capabilities,
-                }
+                })
             end
             lspconfig.pyright.setup({
                 on_attach = on_attach(),
@@ -91,7 +90,29 @@ return {
                     },
                 },
             })
+            lspconfig.html.setup({
+                on_attach = on_attach(),
+                capabilities = capabilities,
+                cmd = { "vscode-html-language-server", "--stdio" },
+            })
 
+            lspconfig.cssls.setup({
+                on_attach = on_attach(),
+                capabilities = capabilities,
+                cmd = { "vscode-css-language-server", "--stdio" },
+            })
+
+            lspconfig.tsserver.setup({
+                on_attach = on_attach(),
+                capabilities = capabilities,
+                cmd = { "typescript-language-server", "--stdio" },
+            })
+
+            lspconfig.bashls.setup({
+                on_attach = on_attach(),
+                capabilities = capabilities,
+                cmd = { "bash-language-server", "start" },
+            })
 
             -- Global mappings.
             -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -130,9 +151,6 @@ return {
                     end, opts)
                 end,
             }) ]]
-            vim.keymap.set('n', '<space>fm', function()
-                        vim.lsp.buf.format { async = true }
-                    end, opts)
             vim.api.nvim_create_autocmd("FileType", {
                 pattern = { "rust", "nix", "c++" },
                 callback = function(args)

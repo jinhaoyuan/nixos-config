@@ -1,7 +1,8 @@
 return {
     {
         "nvim-tree/nvim-tree.lua",
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } },
+        -- enabled = false,
+        dependencies = { { "nvim-tree/nvim-web-devicons" } },
         keys = {
             { "ee", ":NvimTreeToggle<cr>", desc = "NvimTree" },
         },
@@ -27,7 +28,5 @@ return {
                 },
             })
         end,
-
-    }
+    },
 }
-
